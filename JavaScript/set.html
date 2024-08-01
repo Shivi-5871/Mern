@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // the map of set is a type 
+        let setOfNumber = new Set();
+        console.log(setOfNumber);
+        console.log(typeof setOfNumber);
+        setOfNumber.add(1);
+        console.log(setOfNumber.size);
+        console.log(setOfNumber)
+
+
+        //MAP
+        let obj1 = {"name" : "Shivi"};
+        let obj2 = {"name" : "XYZ"};
+        let mapOfNumbers = new Map();
+        mapOfNumbers[1] = 'a';
+        mapOfNumbers[obj1] = 'key-1';   //the object's key doesnt have to be of string type
+        
+        // console.log(mapOfNumbers.obj1)   //will give undefined
+        // console.log(mapOfNumbers[555])   //will give undefined by giving new values that are not stored already
+        console.log(mapOfNumbers[obj1]);
+        console.log(mapOfNumbers.size);
+
+        // if(map[])
+
+        
+    </script>
+</body>
+</html>

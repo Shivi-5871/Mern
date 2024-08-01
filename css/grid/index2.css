@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(69, 62, 62);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.4rem;
+    padding: 4rem;
+    border: 2px solid white;
+    justify-items: stretch;
+}
+
+.item{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(212, 215, 81);
+    border: 5px solid white;
+    /* justify-self: end;   for horizontal axis*/
+    /* align-self: end;     for vertical axis */
+    /* alternative method */
+    place-self: center;
+}

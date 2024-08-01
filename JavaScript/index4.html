@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // functionName() {
+      //     console.log("Hello World");
+      // }
+      // functionName()
+
+      function printName(firstName, lastName) {
+        console.log(`Hello ${firstName} ${lastName}`);
+      }
+
+      printName("Shivi", "Agarwal");
+
+      function Multiply(firstNo, SecondNo) {
+        console.log(
+          `Multiplication of the given nos. is  ${firstNo} * ${SecondNo}`
+        );
+      }
+
+      Multiply(5, 4);
+
+      //ternary operator
+      function checkEvenOdd(number) {
+        console.log(number % 2 == 0 ? "Even" : "Odd");
+      }
+
+      const objectName = {
+        firstName: "Shivi",
+        lastName: "Agarwal",
+        age: 21,
+        getFullName: function () {
+          // console.log(this.firstName + " " + this.lastName);
+          return this.firstName + " " + this.lastName;
+        },
+
+        getBirthYear: function (year, age) {
+          return year - this.age;
+        },
+      };
+      objectName.getFullName();
+      console.log(objectName.getFullName()); //will give undefined
+      console.log(objectName.getBirthYear(2024));
+
+      //adding a new member in the object
+      // objectNam[hobby] = "Coding";  //will give error
+      objectName.hobby = "Coding";
+      console.log(objectName);
+
+      //constructor function are special type of functions
+      function Person(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+      }
+
+      var Info = new Person("Shivi", "Agarwal", 21); //for constructor
+      console.log(Info);
+      console.log(typeof Person); //will print function as this is not an object
+
+      //FOREACH
+      let arr1 = [1, 2, 3, 4, 5];
+
+      function printElem(num) {
+        console.log(num);
+      }
+
+      function printSqr(num) {
+        console.log(num ** 2);
+      }
+      arr1.forEach(printElem); //will give the values in different lines because it is being called again and again
+      arr1.forEach(printSqr);
+
+      //MAP
+      function getCube(num) {
+        return num * num * num;
+      }
+      var newArr = arr1.map(getCube);
+      console.log(newArr); //gives a new array as an output
+
+      //square
+      function getSquare(num) {
+        return num * num * num;
+      }
+      var newArr2 = arr1.map(getCube);
+      console.log(newArr2);
+
+      //FILTER
+      function isEven(number) {
+        return number % 2 == 0; //returns a boolean value
+      }
+
+      // function isOdd(number) {
+      //     return number % 2 !== 0;  //returns a boolean value
+      //     // return !isEven(number)
+      // }
+
+      var evenArray = arr1.filter(isEven);
+      console.log(evenArray);
+
+      //using filter and map together
+      var newArr = arr1.filter(isEven).map(getCube);
+      console.log(newArr);
+
+      // function less(number) {
+      //     return number < 10;
+      // }
+
+      var newArr = arr1
+        .filter(function isOdd(number) {
+          return number % 2 !== 0; //returns a boolean value
+          // return !isEven(number)
+        })
+        .map(function getSquare(num) {
+          return num * num * num;
+        })
+        .filter(function less(number) {
+          return number < 10;
+        });
+
+        
+    </script>
+  </body>
+</html>

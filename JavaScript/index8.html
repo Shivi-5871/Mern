@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .weather-info {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <form id="weather-form" action="/">
+      <label for="city">Enter city name:</label>
+      <input type="text" id="city" name="city" required />
+      <button type="submit">Get Weather</button>
+    </form>
+    <div class="weather-info" id="weather-info"></div>
+
+    <script>
+    //   const url =
+    //     "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=c0cf68d8bbb4af80e70017c6123a78b5";
+    //   console.log(url);
+
+    //   function dummy(responseObject) {
+    //     console.log("successPromise");
+    //   }
+
+    //   function failedPromise() {
+    //     console.log("FailedPromise");
+    //   }
+
+    //   // async function getWeather() {
+    //   //         const apiResponsePromise = fetch(url);
+    //   //         console.log("apiResponsePromise", apiResponsePromise)
+    //   //         // console.log(123)
+    //   //         apiResponsePromise
+    //   //         .then(dummy)   //for success
+    //   //         .catch(failedPromise);  //for failure
+    //   //     }
+
+    //   //ANOTHER METHOD FOR PROMISE FOR ABOVE FUNCTION.
+    //   //THIS CAN BE DONE THROUGH AWAIT METHOD
+
+    //   async function getWeather() {
+    //     const response = await fetch(url);
+    //     console.log("response", response);
+
+    //     const jsonData = await response.json();
+    //     console.log(jsonData);
+    //   }
+
+    //   getWeather();
+
+      const url = "https://api.openweathermap.org/data/2.5/weather?q=Moradabad&appid=c0cf68d8bbb4af80e70017c6123a78b5";
+      console.log(url);
+
+      async function getCity() {
+        const response = await fetch(url);
+        console.log("response", response);
+
+        const json = await response.json();
+        console.log(json);
+        console.log(typeof json);
+        console.log(json.main.temp);
+        
+        let temp = document.getElementById('weather-info');
+        temp.innerHTML = json.main.temp;
+        
+      }
+
+      getCity();
+
+      const formElement = document.querySelector('#weather-form');
+      
+      function getInputandPrintTemp(event) {
+        event.preventDefault();
+        const cityInput = document.querySelector("#city");
+        const city = cityInput.value;
+        console.log("city", city);     
+        console.log("getInputandPrintTemp")
+      }
+      
+      formElement.addEventListener('submit', getInputandPrintTemp)
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let body = document.body;
+        body.style.display = "flex";
+        body.style.justifyContent = "center";
+        
+        
+        let main1 = document.createElement("div");
+        body.append(main1);
+        main1.style.border = "1px solid black";
+        main1.style.width = "45vw";
+        main1.style.minHeight = "55vh"
+        main1.style.display = "flex";
+        main1.style.flexDirection = "column";
+
+        //outside body
+        let main = document.createElement("div");
+        main1.append(main);
+        main.style.border = "1px solid white";
+        main.style.width = "30vw";
+        main.style.minHeight = "50vh";
+        main.style.display = "flex";
+        main.style.flexDirection = "column";
+        main.style.marginLeft = "12px";
+
+        //heading
+        let heading = document.createElement('h1');
+        main.append(heading);
+        heading.innerText = "Add a New Blog  Post";
+
+        //title-box
+        let titleBox = document.createElement("input");
+        main.append(titleBox);
+        titleBox.id = "title";
+        titleBox.placeholder = "Title";
+        titleBox.style.height = "30px";
+        titleBox.style.width = "20vw";
+
+        //title-box
+        let contentBox = document.createElement("textarea");
+        main.append(contentBox);
+        contentBox.id = "content";
+        contentBox.placeholder = "Content";
+        contentBox.rows = "7";
+        contentBox.style.marginTop = "12px"
+        contentBox.style.width = "30vw";
+        
+        
+        //button
+        let button = document.createElement("button");
+        main.append(button);
+        button.innerText = "Add Post";
+        button.style.height = "30px";
+        button.style.width = "90px";
+        button.style.marginTop = "12px"
+        
+
+        //blog-heading
+        let blogPost = document.createElement('h1');
+        main.append(blogPost);
+        blogPost.innerText = "Blog Posts";
+
+        //inside the posts
+        let innerBlog = document.createElement("div");
+        main.append(innerBlog);
+        innerBlog.style.border = "1px solid white";
+
+        button.addEventListener('click', () => {
+            let titles = document.getElementById('title');
+            let titleValue = title.value;
+
+            if(titleValue == "") {
+                alert("Title field Empty");
+                return;
+            }
+
+            let content = document.getElementById('content');
+            let contentValue = content.value;
+
+            if(contentValue == "") {
+                alert("Content field Empty");
+                return;
+            }
+
+            let titleBlog = document.createElement("h1");
+            innerBlog.append(titleBlog);
+            titleBlog.innerText = titleValue;
+
+
+            let posted = document.createElement("span");
+            innerBlog.append(posted);
+            posted.innerText = "Posted On:";
+
+            let blogDate = document.createElement("span")
+            blogDate.innerText = "new Date()";
+            
+
+            let contentBlog = document.createElement("p");
+            innerBlog.append(contentBlog);
+            contentBlog.innerText = contentValue;
+
+        })
+
+       
+    </script>
+</body>
+</html>

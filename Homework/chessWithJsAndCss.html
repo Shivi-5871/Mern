@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let container = document.createElement("div");
+      for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+          let square = document.createElement("div");
+          square.innerText = r * 8 + c + 1;
+
+          if ((r + c) % 2 == 0) {
+            square.className = "black";
+          } else {
+            square.className = "white";
+          }
+          container.appendChild(square);
+        //   square.style.backgroundColor = "blue"
+        }
+        
+      }
+    </script>
+  </body>
+</html>

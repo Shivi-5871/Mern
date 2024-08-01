@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let objectValue = {"key" : "value"}
+        console.log(typeof(objectValue));
+
+        let personInfo = {
+            "Firstname" : "Shivi",
+            "Lastname" : "Agarwal",
+            "Age" : 21,
+            "address" : {
+                "city" : "XYZ"
+            }
+        } 
+
+        console.log(personInfo);
+        console.log(personInfo["Firstname"]);
+        console.log(personInfo.Firstname);
+        
+        let personInfo_1 = {
+            "Firstname" : "Hello",
+            "Lastname" : "Bye"
+        }
+
+        //Array created using variables
+        let newArray = [personInfo, personInfo_1]
+        console.log(newArray);
+
+        personInfo.Age = 20;
+        console.log(personInfo);
+
+        //destructuring
+        const {Firstname, Lastname} = personInfo;
+        console.log(Firstname, Lastname)
+
+        // const {city} = personInfo;
+        // console.log(city)  //will give undefined, as it is the part of another object
+         
+        //TO ACCESS CITY
+        const {address : {city}} = personInfo;
+        console.log(city)
+
+        //Array 
+        let array_1 = [{"Key1" : "Value1", "Key2" : "Value2"}];
+        let array_2 = [{"Key" :[ 1, 2, 3]}];
+        let array_3 = [{"Key1" : [ {"key_2" : "Val_2"}]}];
+
+        const todos = [
+            {
+                id : 1,
+                text : "Coding",
+                isComplete : true
+            },
+            {
+                id : 2,
+                text : "Reading",
+                isComplete : false
+            },
+            {
+                id : 3,
+                text : "Writing",
+                isComplete : true
+            }
+        ];
+
+        console.log(todos);
+        console.log(todos[1]);
+        console.log(todos[0]["id"]);
+
+        let i =5;
+        function increment(num){
+            return num + 1;
+        }
+        for(i; i < 10; i = increment(i)){
+            console.log(i)   //infinite loop because not storing function in a variable
+        }  
+
+        todos.forEach(function (todo)
+        {
+            console.log(todo.text)
+            console.log(todo)
+            console.log(`Task: ${todo.text}, Status: ${todo.isComplete}`)
+        });
+
+        todos.forEach = (todo) => {
+            console.log(`Task: ${todo.text}, Status: ${todo.isComplete}`)
+        }
+
+        const todoText = todos.map(function(todo){
+            return todo.text;
+        });
+        console.log(typeof todoText)
+
+        const year = 2020;
+        if(year % 4 == 0){
+            if(year % 100 != 0){
+                console.log(`The year ${year} is a leap year`)
+            }
+            else{
+                if(year % 400 == 0)
+                    console.log("the given year is not a leap year")
+                else{
+                    console.log("The given year is not a leap year.")
+                }
+            }
+        }
+       
+       
+       </script>
+</body>
+</html>

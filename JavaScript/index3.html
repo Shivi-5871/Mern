@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h3>JS</h3>
+    <script>
+        var fname = "Shivi";
+        console.log(fname)
+
+        function greet(){
+            var lname = "Agarwal";
+            console.log("Inside function:",fname);
+            console.log(lname);
+        }
+        greet();
+
+        // console.log(lname);    
+
+        var num1 = 20, num2 = 40;
+        console.log(num1 + num2)
+
+        let a = --num1;
+        console.log(a)
+        console.log(num1);
+
+        //variable = condition? a:b
+        var b = 100;
+        console.log((b % 2== 0) ? "Even" : "Odd");  
+
+        let number = 100;
+        if(number < 0 || number % 2 != 0){
+            console.log("Negative or odd number")
+        }
+        else{
+            console.log("Even number")
+        }
+    </script>
+  </body>
+</html>

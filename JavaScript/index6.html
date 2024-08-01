@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class PersonClass {
+        constructor(firstName, lastName, dob) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.dob = new Date(dob);
+        }
+
+        getBirthYear() {
+          return this.dob.getFullYear();
+        }
+        getBirthDate() {
+          return this.dob.getDate();
+          // return this.dob.getMonth();  //ye 1 answer aa rha hai 2 ki jageh
+        }
+        getFullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+      }
+
+      console.log(typeof PersonClass);
+      const person2 = new PersonClass("Shivi", "Agarwal", "02-26-2003"); //this is a function call so it will give the type as function
+
+      console.log(person2);
+      console.log(typeof person2); //object
+      console.log(person2.getBirthYear());
+      console.log(person2.getBirthDate());
+      console.log(person2.getFullName());
+
+      //inheritance
+      class Teacher extends PersonClass {
+        //also known as derived class
+        constructor(firstName, lastName, dob, job) {
+          super(firstName, lastName, dob); //calling constructor function of parent class to set the value in Teacher class                this.job = job;
+          this.job = job;
+        }
+
+        getJob() {
+          return this.job;
+        }
+      }
+
+      let teacherObject = new Teacher(
+        "Shivi",
+        "Agarwal",
+        "02-26-2003",
+        "Teacher"
+      );
+      console.log(teacherObject);
+      console.log(typeof teacherObject);
+      console.log(teacherObject.getBirthDate());
+      console.log(teacherObject.getBirthYear());
+      console.log(teacherObject.getFullName());
+      console.log(teacherObject.getJob());
+    </script>
+  </body>
+</html>

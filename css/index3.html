@@ -1,0 +1,131 @@
+<style>
+    
+    div:first-of-type{
+        background-color: lightblue;
+    }
+    /* first div and immediate child of the body */
+    body > div:first-of-type {
+        background-color: lightcoral;
+    }
+
+    /* all the divs in the body */
+    body div{
+        background-color: lightgreen;
+    }
+
+    /* element to first of its type */
+    *:first-of-type{
+        color: rgb(55, 35, 91);
+    }
+
+    /* div elemenet wich its first of its kind inside section */
+    section  div:first-of-type{
+        background-color: rgb(167, 167, 255);
+    }
+
+    /* para which is the child of either span or div */
+    div p, span p{
+        color: rgb(41, 66, 16);
+    }
+
+    /* first para which is the child of either span or div */
+    div p:first-of-type{
+        color: darkred;
+    }
+
+    /* p child element which is the immmediate child of the body */
+    body > p{
+        background-color: rgb(152, 113, 250);
+    }
+
+    /* apply to all the p element which is the first child */
+    p:first-child{
+        background-color: forestgreen;
+    }
+
+</style>
+
+<body>
+    <h1 class="header-1">CSS Selector Examples</h1>
+
+    <div>First ever div of the body which is immediate child</div>
+    
+    <br />
+
+    <div>Second div of the body which is not immediate child</div>
+
+    <br />
+    <div><div>This is a div inside a div whose parent is the body</div></div>
+
+    <p>
+      This is para inside the body which is not immediate child.
+    </p>
+
+    <br />
+    <br />
+    <section class="intro-css section-1" id="intro-css-section-id">
+      <div>
+        <h2>Introduction</h2>
+        <p>
+          CSS stands for Cascading Style Sheets. It is a style sheet language
+          used to describe the presentation of a document written in HTML or
+          XML.
+        </p>
+        <p>
+          CSS describes how elements should be rendered on screen, on paper, in
+          speech, or on other media.
+        </p>
+      </div>
+
+      <div>This is div-2 inside first section.</div>
+    </section>
+
+    <br />
+    <br />
+
+    <section class="intro-html section-2" id="intro-html-section-id">
+      <div>
+        <h2>Lets talk about HTML as well</h2>
+
+        <p>
+          HTML stands for HyperText Markup Language. It is the standard markup
+          language for documents designed to be displayed in a web browser.
+        </p>
+
+        <p>
+          It can be assisted by technologies such as Cascading Style Sheets and
+          scripting languages such as JavaScript.
+        </p>
+      </div>
+      <div>This is div-2 inside second section.</div>
+    </section>
+
+    <br />
+    <br />
+
+    <section class="intro-js section-3" id="intro-js-section-id">
+      <div>
+        <h2>What is JavaScript?</h2>
+        <p>JavaScript is a programming language.</p>
+      </div>
+      <div>This is div-2 inside third section.</div>
+    </section>
+
+    <br />
+    <br />
+
+    <section class="diff section-4" id="diff-section-id">
+      <div>
+        <h2>What is the difference between CSS, HTML, and JavaScript?</h2>
+        <p>CSS is used to style the webpage.</p>
+        <p>HTML is used to structure the webpage.</p>
+        <p>JavaScript is used to add interactivity to the webpage.</p>
+        <div>This is div-2 inside fourth section.</div>
+      </div>
+    </section>
+
+    <section class="last-section section-5" id="last-section-id">
+      <p>This is the paragraph inside the section which is first child</p>
+      <p>This is the paragraph inside the section which is second child</p>
+    </section>
+  </body>

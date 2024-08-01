@@ -1,0 +1,53 @@
+<html>
+  <head> </head>
+
+  <body>
+    <script>
+      // function divide(a, b){
+      //     console.log(a, b, c);
+      //     if(b === 0){
+      //         throw new Error("Divide by zero error");
+      //     }
+      //     return a/b
+      // }
+      // console.log(1);
+      // let num1 = 10;
+      // let num2 = 0;
+      // console.log(divide(num1, num2));
+      async function getWeather() {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=Moradabad&appid=5aad59a746bec23d65194d32609c2639&units=metric%60`;
+
+        try {
+          console.log("a");
+          const responseVar = await fetch(url);
+          // console.log(responseVar.status);
+          console.log("b");
+          if (responseVar.ok) {
+            const jsonData = await responseVar.json();
+            //body and status are the part of response, so we'll check it after response only.
+            // return jsonData;
+            console.log("d")
+          } else {
+            throw new Error("data no fetched");
+          }
+
+        //   console.log("c");
+        //   const main = jsonData.main;
+        //   console.log(main);
+        //   const temp = main.temp;
+        //   console.log(temp);
+        // } catch (err) {
+        //   console.log("Error occured");
+        //   console.log(err);
+        //   console.log(err.name);
+        //   console.log(err.message);
+        }
+    }
+
+      getWeather();
+      // console.log(3);
+
+      // console.log(4);
+    </script>
+  </body>
+</html>

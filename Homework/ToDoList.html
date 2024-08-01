@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- <style>
+    body{
+        font-weight: ;
+    }
+  </style> -->
+  <body>
+    <script>
+
+        let container = document.createElement("div");
+        document.body.appendChild(container);
+
+        //BORDER
+        container.style.border = "5px solid black";
+        container.style.borderRadius = "15px";
+        container.style.height = "55vh";
+        container.style.width = "40vw";
+        container.style.margin = "auto";
+        container.style.marginTop = "25px";
+        container.style.display = "flex";
+        container.style.flexDirection = "column";
+        container.style.alignItems = "center";
+
+        // TODO TEXT
+        let toDo = document.createElement("div");
+        container.appendChild(toDo);
+        toDo.textContent = "TO-DO LIST";
+        toDo.style.fontSize = "70px";
+        toDo.style.fontWeight = "bold";
+        toDo.style.textAlign = "center";
+        toDo.style.paddingTop = "50px";
+
+        // TEXTBOX
+        let box = document.createElement("input");
+        container.append(box);
+        box.type = "text";
+        box.style.border = "1px solid black";
+        box.style.borderRadius = "10px";
+        box.style.height = "60px";
+        box.style.width = "500px";
+        box.style.display = "block";
+        box.style.margin = "auto";
+        box.style.marginTop = "50px";
+        box.placeholder = "Add a new Task";
+        
+        //submit button
+        let add = document.createElement("input");
+        container.appendChild(add);
+        add.type = "button";
+        add.value = "Add";
+        add.style.borderRadius = "10px";
+        add.style.fontSize = "20px";
+        add.style.marginTop = "10px";
+        add.style.padding = "10px";
+        add.addEventListener("click", addText);
+        
+        let secondButton = document.createElement("input");
+        container.appendChild(secondButton);
+        secondButton.style.marginTop = "30px";
+        secondButton.style.marginLeft = "450px";
+        secondButton.type = "button";
+        secondButton.value = "Delete";
+        secondButton.style.fontSize = "20px";
+        secondButton.style.marginBottom = "20px";
+        secondButton.style.borderRadius = "10px";
+        secondButton.style.padding = "10px";
+        secondButton.addEventListener("click", removeText);
+
+        let texts = [];
+        //adding a text
+        function addText() {
+            let text = box.value;
+            if(text != "") {
+            const DisplayText = document.createElement("div");
+            container.appendChild(DisplayText);
+            DisplayText.textContent = text;
+            DisplayText.style.fontSize = "10px";
+            DisplayText.style.padding = "5px";
+            DisplayText.style.border = "1px solid";
+            texts.push(DisplayText);
+            }
+        }
+
+        //removing a text
+        function removeText() {
+            if(texts.length > 0) {
+                texts = texts.pop();
+                container.removeChild(texts);
+            }
+        }
+
+        
+    </script>
+  </body>
+</html>

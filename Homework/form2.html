@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      text-align: center;
+      background-color: #a9d7e9;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: auto;
+      padding-top: 80px;
+    }
+
+    fieldset {
+      background-color: aliceblue;
+      border: none;
+      border-radius: 15px;
+      width: 800px;
+      /* height: 900px; */
+    }
+
+    .heading {
+      padding-top: 50px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    p {
+      padding: 30px 20px 20px;
+      font-size: 30px;
+    }
+
+    .form-rows {
+      display: flex;
+      justify-content: center;
+    }
+
+    .labels {
+      padding: 20px 0px 0px 20px;
+      font-size: 20px;
+      display: inline-block;
+      text-align: right;
+      width: 40%;
+    }
+
+    .fields {
+      margin: 20px;
+      display: inline-block;
+    }
+
+    .input-fields {
+      padding: 5px;
+    }
+
+    .location {
+      font-size: 14px;
+      padding: 5px;
+    }
+
+    .button {
+      width: 130px;
+      font-size: 25px;
+      height: 50px;
+      border: none;
+      background-color: rgba(39, 128, 201, 0.918);
+      color: white;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <body>
+    <div class="main">
+      <p class="heading">Good Vibes Form</p>
+      <form>
+        <fieldset>
+          <p>Tell us something positive that happened to you today.</p>
+          <div class="form-rows">
+            <div class="labels"><label for="name">Name </label></div>
+            <div class="fields">
+              <input
+                type="text"
+                class="input-fields"
+                id="name"
+                placeholder="Enter you name address"
+              />
+            </div>
+            <br /><br />
+          </div>
+
+          <div class="form-rows">
+            <div class="labels"><label for="email-id">Email </label></div>
+            <div class="fields">
+              <input
+                type="email"
+                class="input-fields"
+                id="email"
+                placeholder="Enter you email address"
+              />
+            </div>
+            <br /><br />
+          </div>
+
+          <div class="form-rows">
+            <div class="labels">
+              <label for="comment">On a scale of 1-10, how good was it?</label>
+            </div>
+            <div class="fields">
+              <input
+                type="text"
+                class="input-fields"
+                id="comment"
+                placeholder="Enter a number between 1-10"
+              />
+            </div>
+            <br /><br />
+          </div>
+
+          <div class="form-rows">
+            <div class="labels">
+              <label for="location">Where did it happen?</label>
+            </div>
+            <div class="fields">
+              <select name="location" id="location" class="location">
+                <option value="At Home">At Home</option>
+                <option value="On my commute">On my commute</option>
+                <option value="At Work">At Work</option>
+                <option value="On the street">On the street</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <br /><br />
+
+          <div class="form-rows">
+            <div class="labels">
+              <label for="timing">At what time of the day did it happen?</label>
+            </div>
+            <div class="fields">
+              <div class="radio-button">
+                <label><input type="radio" name="timing" />Morning</label>
+                <br />
+                <label><input type="radio" name="timing" />Afternoon</label>
+                <br />
+                <label><input type="radio" name="timing" />Evening</label>
+              </div>
+            </div>
+          </div>
+          <br /><br />
+
+          <div class="form-rows">
+            <div class="labels">
+              <label for="Emotions"
+                >What emotions did you experience? (Select all that
+                apply)</label
+              >
+            </div>
+            <!-- <div class="fields"> -->
+            <div class="checkbox-button">
+              <ul type="none">
+                <li>
+                  <label
+                    ><input type="checkbox" name="Emotions" />Excited</label
+                  >
+                </li>
+                <li>
+                  <label
+                    ><input type="checkbox" name="Emotions" />Humbled</label
+                  >
+                </li>
+                <li>
+                  <label><input type="checkbox" name="Emotions" />Elated</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" name="Emotions" />Loved</label>
+                </li>
+                <li>
+                  <label
+                    ><input type="checkbox" name="Emotions">Enthusiastic</label>
+                </li>
+              </ul>
+              <!-- </div> -->
+            </div>
+          </div>
+          <br /><br />
+
+          <div class="form-rows">
+            <div class="labels">
+              <label for="experience"
+                >Please describe your positive experience</label
+              >
+            </div>
+            <div class="fields">
+              <textarea
+                name=""
+                id="experience"
+                rows="4"
+                class="input-fields"
+                placeholder="Enter your experience here...."
+              ></textarea>
+            </div>
+          </div>
+          <br /><br />
+
+          <div class="buttons">
+            <input type="submit" name="submit" id="submit" class="button" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

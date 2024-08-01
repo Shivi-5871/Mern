@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-image: url(chess.jpg);
+      background-size: cover;
+    }
+
+    #chessboard{
+        display: grid;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+        height: 80vh;
+        width: 100vh;
+        margin: auto;
+        /* background-color: black; */
+    }
+
+    h2{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        padding: 30px;
+    }
+
+    .black{
+        background-color: rgb(54, 52, 52);
+        color: white;
+    }
+
+    .white{
+        background-color: white;
+        color: black;
+    }
+
+    .black, .white{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+    }
+  </style>
+
+  <body>
+    <h2>CHESS WITH JS</h2>
+    <div id="chessboard"></div>
+    <script>
+      let chessboard1 = document.getElementById("chessboard");
+
+      for (let r = 0; r < 8; r++) {
+        for (let c = 0; c < 8; c++) {
+          let square = document.createElement("div");
+          square.innerText = (r * 8 + c + 1);
+
+          if ((r + c) % 2 == 0) {
+            square.className = "black";
+          } else {
+            square.className = "white";
+          }
+
+          chessboard1.append(square);
+        }
+      }
+    </script>
+  </body>
+</html>

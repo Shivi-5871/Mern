@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit_appointment" method="post">
+        <fieldset>
+            <h1>Schedule a call</h1>
+
+            <label>Name: <input type="text" name="Name" value="Default Name" required></label>
+            <br><br>
+            <label>Email: <input type="email" name="email" required></label>
+            <br><br>
+            <label>Date: <input type="dat e"></label>
+            <br><br>
+            <label>Time: <input type="time"></label>
+            <br><br>
+            <label>Select Doctor:</label> 
+            <select name="doctor" id="doctor" required>
+                <option value="">--Please Select An Option--</option>
+                <option value="Tata">Dr. Smith</option>
+                <option value="Jones">Dr. Jones</option>
+                <option value="Williams">Dr. Williams</option>
+              </select>
+            <br><br>
+            <label>Reason For Visit: </label>
+            <textarea id="reason" rows="4" required></textarea>
+            <br><br>
+            <input type="submit" value="Book Appointment">
+            <input type="submit" value="Reset">
+        </fieldset>
+    </form>
+</body>
+</html>

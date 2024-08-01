@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Page</title>
+
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        text-align: center;
+        border: 1px solid black;
+        background-image: url(images/delivery.jpg);
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+    <br><br>
+    <form>
+        <h3>Order your Food!!</h3>
+        <br><br>
+        <label>Name: <input type="text" id="Name" value="Default Name" required/></label>
+        <br /><br />
+        <label>Mobile No: <input type="text" id="phoneNo" required /></label>
+        <br /><br />
+        <label>Address: <input type="text" id="address" required /></label>
+        <br /><br />
+        <label>Email: <input type="email" id="email" required /></label>
+        <br /><br />
+        <label>Date of delivery: <input type="date" /></label>
+        <br /><br />
+        <label>Time of delivery: <input type="time" /></label>
+        <br /><br />
+
+        <label for="selectFood">Type of food:</label>
+            <input type="checkbox" id="selectFood" />Veg
+            <input type="checkbox" id="selectFood" />Non-Veg
+            <input type="checkbox" id="selectFood" />Chinese
+            <input type="checkbox" id="selectFood" />Italian <br /><br />
+
+        <label>Write your comment here: </label>
+        <textarea id="comment" required></textarea>
+        <br /><br />
+
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+        <br><br>
+    </form>
+  </body>
+</html>

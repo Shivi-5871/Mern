@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+
+    /* *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      height: 100vh;
+      width: 100vw;
+      background-color: ;
+    } */
+
+  </style>
+  <body>
+    <div class="container">
+      <div class="main">A</div>
+      <div class="main">B</div>
+      <div class="main">C</div>
+    </div>
+
+    <script>
+      
+        document.body.style.border = "10px solid rgb(10, 10, 41)";
+        document.body.style.margin = "0";
+        document.body.style.padding = "0";
+        document.body.style.boxSizing = "border-box";
+        document.body.style.height = "100vh";
+        document.body.style.width = "100vw";
+        document.body.style.backgroundColor = "lightblue";
+        const container = document.querySelector('.container');
+        const boxes = document.querySelectorAll(".main");
+
+        for (const element of boxes) {
+            element.style.height = "100px";
+            element.style.width = "100px";
+            element.style.border = "10px solid rgba(53, 8, 8, 0.808)";
+            element.style.borderRadius = "10px";
+            element.style.backgroundColor = "rgba(203, 139, 139, 0.808)";
+            
+          }
+          container.style.display = "inline-grid";
+          container.style.gridTemplateColumns = 'repeat(3, 1fr)';
+          container.style.gridTemplateRowss = 'repeat(3, 100px)';
+          // container.style.gridGap = '10px'
+    </script>
+  </body>
+</html>

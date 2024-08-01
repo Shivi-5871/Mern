@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //square of two numbers
+      let myFunction = (a, b) => {
+        const squareA = a * a;
+        const squareB = b * b;
+        return [squareA, squareB];
+      };
+      let result = myFunction(2, 3);
+      console.log(result);
+
+      //deleting an object
+      //   const objectName = {
+      //     firstName: "Shivi",
+      //     lastName: "Agarwal",
+      //     age: 21,
+      //     getFullName: function () {
+      //       return this.firstName0 + " " + this.lastName;
+      //     },
+      //   };
+
+      //array
+      let languages = ["html","css","javascript","react","node","postgres",];
+      console.log(languages.length);
+      console.log(languages[2]);
+      let newLanguages = languages.pop();
+      console.log(languages);
+      languages.push("sql");
+      console.log(languages);
+      languages.shift();
+      console.log(languages);
+      newLanguages = languages.join(" ");
+      console.log(newLanguages);
+      
+      let array1 = languages;
+      console.log(array1)
+      let sortedLanguges = array1.sort();
+      console.log(sortedLanguges);
+      let nodeIndex = sortedLanguges.indexOf("node");
+      console.log([nodeIndex]);
+      let reactIndex = sortedLanguges.indexOf("react");
+      console.log([reactIndex]);
+      newLanguages = languages.join("-");
+      console.log(newLanguages);
+
+      let stringArray = languages.toString();
+    //   console.log(stringArray.)  //capitalize k liye function likhna hai
+      </script>
+  </body>
+</html>

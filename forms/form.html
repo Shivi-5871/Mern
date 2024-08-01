@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Form</legend>
+        <label for="Name">Name:</label>
+        <!-- value has more priority than placeholder -->
+        <input
+          type="text"
+          name="Name"
+          id="Name"
+          placeholder="Enter your name"
+          value="Enter your name"
+        />
+        <br /><br />
+        <label for="firstname">firstname:</label>
+        <input type="text" name="" id="firstname" />
+
+        <!-- IMPLICIT METHOD -->
+        <br /><br />
+        <label> Another Label: <input type="text" /></label>
+        <br /><br />
+        <label for="Gender">Gender:</label>
+        <label>Male<input type="radio" name="Gender" /></label>
+        <label> Female <input type="radio" name="Gender" /></label>
+        <br /><br />
+        <label
+          >Enter your email-id:<input
+            type="email"
+            placeholder="example@gmail.com"
+        /></label>
+        <br /><br />
+        <label for="Brands">Cars:</label>
+        <select name="CarBrand" id="Brands" required>
+          <option value="">--Please Select An Option--</option>
+          <option value="Tata">Tata</option>
+          <option value="Audi">Audi</option>
+          <option value="Volvo">Volvo</option>
+        </select>
+        <br /><br />
+        <input
+          type="button"
+          value="On-Click Button!"
+          onclick="alert('Alert')"
+        />
+      </fieldset>
+    </form>
+    <br><br>
+    
+  </body>
+</html>
