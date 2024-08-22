@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function f1(callback) {
+        //     console.log("Inside function f1");
+        //     callback();
+        // }
+
+        // function sayHello(){
+        //     console.log("Hello");
+        // }
+
+        // function goodBye () {
+        //     console.log("Goodbye")
+        // }
+
+        // f1(() => console.log("Hello"))
+
+
+        // //with parameters
+        // function f2(name, callback) {
+        //     console.log("Inside f2");
+        //     callback(name);
+        // }
+
+        // function greet(name){
+        //     console.log(`Hello ${name}`);
+        // }
+
+        // function bye(name) {
+        //     console.log(`Bye ${name}`)
+        // }
+
+        // f2("Alice", greet);
+        // f2("Alice", bye);
+
+        // //ANOTHER METHOD FOR ABOVE FUNCTIONS WITHOUT DECLARING THE GREET AND BYE FUNCTION
+        // f2("Alice", (name) => console.log(`Hello ${name}`));
+        // f2("Alice", (name) => console.log(`Goodbye ${name}`));
+    
+    
+        // 2-INPUT TYPES CALLBACK
+        //guidelines k through humei error wale parameters ko pehele he rakhna hai humesha
+        function f3(name, callback) {
+            console.log("I am inside f3");
+            if(typeof name === 'string') {
+                const data = `Hello ${name}`;
+                callback(null, data)
+            }
+            else {
+                const error = new Error("Error: Name is a number");
+                callback(error, null);
+            }
+        }
+
+        // function greet(error, data) {
+        //     if(error) {
+        //         console.log(error.message);
+        //     }
+        //     else {
+        //         console.log(data);
+        //     }
+        // }
+
+        // f3("Alice", greet);
+        // f3("Alice",  (error, data) => console.log(`${data}`))
+        f3("Alice",  (error, data) => error ? error.message : `${data}`);
+
+        f3("Alice", (error, data) => {
+            if(error) {
+                console.log(error.message);
+            }
+            else {
+                console.log(data);
+            }
+        })
+    
+    
+    
+    </script>
+</body>
+</html>

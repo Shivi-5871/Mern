@@ -1,0 +1,71 @@
+array: 
+    <%- include('partials/header') %>
+      <% if(fruits.length > 0) { %> 
+        UL
+        
+        <% fruits.forEach(fruit => { %>
+      
+            LI <%= fruit %> /LI
+      
+            <% }); %> 
+            
+        /U;
+        
+            <% } else { %> 
+                <%= "Empty array" %>
+            
+        <% } %>
+        <%- include('partials/footer') %>
+
+
+CONDITIION: 
+    <%- include('partials/header') %>
+    <%= greetings %>
+    <%- include('partials/footer') %>
+
+
+DYNAMIC CONTENT:
+    <% if(isLoggedIn == true) { %>
+        <%= user %>
+    <% } else { %>
+        BUTTON <%= "Login Button" %> /BUTTON
+    <% } %>
+
+
+LOOPING: 
+     <%- include('partials/header') %>
+    ul  
+    <% for(let i = 1; i <= 20; i++) { %>
+        li <%= i %> /li
+    <% } %>
+    /ul
+    
+
+    p This is Looping File /p
+    <%- include('partials/footer') %>
+
+NESTED LOOPS: 
+     <% for(let i = 1; i <= 10; i++) { %>
+        <% for(let j = 1; j <= 10; j++) { %>
+            <%= i*j %>
+        <% } %>
+       br br
+    <% } %>
+
+
+USER INFO:
+     <%- include('partials/header') %>
+    H1 User's Info /H1
+    TABLE border="1px solid black"
+        TR
+            TH Name /TH
+            TH Age /TH
+        /TR
+        <% users.forEach(user => { %>
+            TR
+                TD <%= user.name %> /TD
+                TD <%= user.age %> /TD
+            /TR
+        <% }) %>
+    /TABLE
+    <%- include('partials/footer') %>

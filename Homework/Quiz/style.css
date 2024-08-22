@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.outside { 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: 1px solid white;
+    min-height: 60vh;
+    width: 25vw;
+    margin: auto;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: white;
+}
+
+body{ 
+    background-color: rgb(70, 193, 234);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+}
+
+.questions {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+input {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.submit-button {
+    padding: 8px;
+    font-size: 20px;
+    width: 20vw;
+    background-color: rgb(49, 105, 189);
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    border-color: white;
+}
+

@@ -1,0 +1,14 @@
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/nav') %>
+    <div class="logout-container">
+        <h1>Are you sure you want to log out?</h1>
+        <form action="/logout" method="POST">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+        <a href="/blogs" class="cancel-link">Cancel</a>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

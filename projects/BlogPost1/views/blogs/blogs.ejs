@@ -1,0 +1,33 @@
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+
+    <%- include("../partials/nav") %>
+
+    <div class="blog-head"><h1>All Blogs</h1></div>
+    
+    <br><br>
+    <% if(blogs.length > 0) { %>
+        
+        <% blogs.forEach(blog => { %>
+            <div class="blog-box">
+            <a href="/blogs/title/<%= blog.title %>" id="anchor">
+            <b><u> <%= blog.title %> </u></b>
+            <p><%= blog.summary %></p>
+            
+            <p><%= blog.content.substring(0,6) %>...</p>
+            
+            <p><em>by <%= blog.author %></em></p>
+            <br><br>
+            
+    
+        </div></a>
+        <% }) %> 
+
+    <% }%> 
+    
+    <%- include("../partials/footer") %>
+    
+</body>
+</html>
+ 

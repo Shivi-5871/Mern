@@ -1,0 +1,334 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background: #444;
+  color: #fff;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .site-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav .site-title a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav .site-title h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background: #555;
+}
+
+
+/* Index page */
+.index h1{
+  text-align: center;
+  padding: 20px;
+}
+
+/* Blog Page */
+.blog-box{
+  border: 1px solid beige;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#anchor{
+  text-decoration: none;
+  color: black;
+}
+
+.blog-head h1{
+  text-align: center;
+}
+
+/* About Page */
+.about-author h1, p{
+  text-align: center;
+}
+
+
+.about-author p{
+  margin-top: 20px;
+}
+
+.about-author{
+  border: 1px solid #ddd ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 20px;
+}
+
+
+/* New Blog Page */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+#newblog-submit {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  background-color: #1a314a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #23466c;
+}
+
+
+/* Success page */
+.blog-success {
+  border: 2px solid whitesmoke;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 20px;
+}
+
+.blog-success h1{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.blog-success button{
+  background-color: rgb(8, 108, 8);
+  border-radius: 5px;
+  border: none;
+  padding: 3px;
+  font-size: 18px;
+  width: 20%;
+  margin-top: 5%;
+  margin-left: 40%;
+  margin-bottom: 20px;
+}
+
+.blog-success a{
+  text-decoration: none;
+  color: white;
+}
+
+
+/* Failed Page */
+.blog-fail{
+  border: 2px solid whitesmoke;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 20px;
+}
+
+.blog-fail h1{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.blog-fail button{
+  background-color: rgb(108, 8, 8);
+  width: 45%;
+  margin: 70px auto 0;
+  margin-bottom: 20px;
+}
+
+.blog-fail a{
+  text-decoration: none;
+  color: white;
+}
+
+
+/* Single BLog Page */
+.single_blog{
+  border: 1px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 80px auto 0;
+  width: 90%;
+  padding: 20px;
+  /* display: flex; */
+  /* justify-content:center; */
+}
+
+.single_blog_head{
+  margin-bottom: 25px;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+.delete-form{
+  margin: 0;
+}
+
+.icon-delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #f44336;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.icon-delete-btn i.material-icons {
+  font-size: 24px;
+}
+
+.icon-delete-btn:hover {
+  color: #d32f2f;
+  background-color: transparent;
+}
+
+.back-icon {
+  text-decoration: none;
+  color: #333; /* Set the icon color */
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.back-icon:hover {
+  color: #000; /* Darker color on hover */
+}
+
+.back-icon i.material-icons {
+  font-size: 32px;
+}
+
+
+
+
+/* delete page */
+.delete-blog{
+  border: 1px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 80px auto 0;
+  width: 80%;
+  padding: 20px;
+}
+
+.delete-blog h1{
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.delete-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0f501f;
+  color: white;
+  text-align: center;
+  text-decoration: none; 
+  border-radius: 4px;
+  margin-left: 40%;
+  margin-top: 5%;
+}
+
+.delete-button:hover {
+  background-color: #093b15;
+}
+
+.delete-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.delete-button:active {
+  background-color: #0c4019;
+}
+
+
+
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+footer p {
+    margin: 0;
+}
+

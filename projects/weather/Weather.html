@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        background-color: #ddc09b;
+      }
+
+      .container {
+        border: 2px solid gray;
+        padding: 10px;
+        min-height: 50vh;
+        width: 70vw;
+        background-color: #d3e3b3;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+      <form id="weather-form" action="/">
+        <label for="city">Enter City Name:</label>
+        <input type="text" id="city" name="city" required />
+        <button type="submit">Get Weather</button>
+      </form>
+
+      <ul id="myList"></ul>
+    </div>
+
+    <script>
+      let form = document.getElementById("weather-form");
+      let input = document.getElementById("city");
+      let unlist = document.getElementById("myList");
+
+      form.addEventListener(
+        "submit",
+        (e) => {
+          e.preventDefault();
+          let city = input.value;
+          let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=25f1ec1d6e77c519212bb2eb81262faf`;
+
+          let getTemp = async () => {
+            let response = await fetch(url);
+
+            let json = await response.json();
+            console.log(json);
+
+            let list = document.createElement("li");
+            list.style.listStyle = "none";
+
+            let temperature = json.main.temp - 272.15;
+            let temp = `Temperature of ${city}: ${temperature}°C`;
+
+            let feelLike = json.main.feels_like - 272.15;
+            let feel = `Feel Like: ${feelLike}`;
+
+            let wind = json.wind.deg;
+            let winds = `Wind: ${wind}`;
+
+            list.innerHTML = ` ${temp} <br> ${feel} <br> ${winds}`;
+            unlist.appendChild(list);
+          };
+          getTemp();
+          input.value = "";
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

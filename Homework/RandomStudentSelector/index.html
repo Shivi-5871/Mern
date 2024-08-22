@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="heading">
+        <h1>Random Student Selector</h1>
+      </div>
+      <div class="selection">
+        <button onclick="displayRandomStudent(studentArr, exclusionList)">
+            Select Random Student
+        </button>
+
+        <div class="student"></div>
+      </div>
+    </div>
+
+    <script>
+
+        let body = document.body;
+        let main = document.querySelector(".main");
+        body.append(main);
+
+        let student = document.querySelector(".student");
+        main.append(student);
+
+        const studentArr = ["Abbas Akbar","Abhinav sharma","Abhishek Bansal ","Abhishek Srivastava","Aditya Kumar Singh ","Ali Sher Khan","Ananya Lamba","Anjali Debnath","Ankit Saini","Anoushka gautam","Ansh Kumar Gupta","Anshika Bhatnagar ","Anuj Chauhan ","Anurag Saini","Arin Saxena","Ashish Ansh","Avni saxena","Divyanshi Vishnoi ","Inayat Ullah Khan","Kratika Agarwal","Manish Kumar","Manit rastogi ","Nikita Rathore","Prakhar Sharma ","Prakriti Gupta","Pranjal Agarwal","Prince Saxena ","Sakshi Chauhan","Samarth Rastogi","Samra Rubab ","Sandeep Kumar","Sarthak rastogi","Shashank johri","Shashwat Tewari","Shivam Prajapati","Shivi Agarwal","Shrey Singhal","Sohil Ansari","Tahir Ali","Tahzeeb Malik ","Tanu Saini","Vishal kumar","Pratham Gupta"];
+        const exclusionList = ["Pratham Gupta"];
+
+      function getRandomStudent(arr, exclusionList) {
+        const availableStudents = arr.filter(
+          (student) => !exclusionList.includes(student)
+        );
+        if (availableStudents.length === 0) {
+          return "No students available for selection.";
+        }
+        const randomIndex = Math.floor(
+          Math.random() * availableStudents.length
+        );
+        return availableStudents[randomIndex];
+      }
+
+      function printCharacterByCharacter(text, index = 0) {
+        if (index < text.length) {
+          student.innerText += text[index];
+          setTimeout(() => printCharacterByCharacter(text, index + 1), 500);
+        } else {
+            student.innerText += ""; // Move to the next line after printing all characters
+        }
+      }
+
+      function displayRandomStudent(arr, exclusionList) {
+        student.innerText = "Selecting a random student...";
+
+        setTimeout(() => {
+            student.innerText += "3...";
+          setTimeout(() => {
+            student.innerText += "2...";
+            setTimeout(() => {
+                student.innerText += "1...";
+              setTimeout(() => {
+                const randomStudent = getRandomStudent(arr, exclusionList);
+                student.innerText = "Randomly selected student: ";
+                printCharacterByCharacter(randomStudent);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }
+
+      displayRandomStudent(studentArr, exclusionList);
+    </script>
+  </body>
+</html>

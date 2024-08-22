@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    box-shadow: 0 0 10px rgb(69, 56, 0.2);
+    margin: 100px auto 0;
+    border: 1px solid rgb(255, 254, 254);
+    width: 60%;
+    min-height : 30vh;
+    background-color: rgb(191, 234, 231);
+}
+
+h1{
+    text-align : center;
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+.selection { 
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+
+}
+
+button{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.student{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 30px;
+}

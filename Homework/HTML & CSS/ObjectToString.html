@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script>
+
+      let person = {
+        name: "Shivi Agarwal",
+        age: 21,
+        address : {
+            country : "India",
+            state : "UP",
+            homeAddress : {
+                city : "Gajraula",
+                zip_code : "244235"
+            }
+        }
+      };
+
+      let result = JSON.stringify(person);
+      console.log(result);
+      console.log(typeof(person.name));
+      console.log(typeof(person.age));
+      console.log(typeof(person.address));
+      console.log(typeof(person.address.country));
+      console.log(typeof(person.address.state));
+      console.log(typeof(person.address.homeAddress));
+      console.log(typeof(person.address.homeAddress.city));
+      console.log(typeof(person.address.homeAddress.zip_code));
+
+    </script>
+
+  </body>
+</html>
