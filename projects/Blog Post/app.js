@@ -20,7 +20,7 @@ require("dotenv").config();
 const USER_NAME = process.env.USER_NAME;
 const PASSWORD = process.env.PASSWORD;
 const DATABASE_NAME = process.env.DATABASE_NAME;
-console.log(USER_NAME, PASSWORD, DATABASE_NAME);
+// console.log(USER_NAME, PASSWORD, DATABASE_NAME);
 const dbURI = `mongodb+srv://${USER_NAME}:${PASSWORD}@merncluster.qbcns.mongodb.net/${DATABASE_NAME}?retryWrites=true&w=majority&appName=mernCluster`
 
 
