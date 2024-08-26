@@ -9,11 +9,11 @@ const getBlogs = (req, res) => {
     BlogPost.find().sort({createdAt: -1})
         .then((result) => {
             console.log("RESULT K ANDR")
-            res.render("blogs", {title: "All Blogs", blogs: result});
+            res.render("blogs/blogs", {title: "All Blogs", blogs: result});
         })
         .catch((err) => {
             console.log("ERROR AA GAYA");
-            res.render("fail", {title: "All Blogs"});
+            res.render("blogs/fail", {title: "All Blogs"});
         })
 };
 
@@ -25,7 +25,7 @@ const getBlogById = (req, res) => {
     BlogPost.findById(req.params.id)
         .then((result) => {
             console.log("ID wala result")
-            res.render("singleblog", {title: result.title, blog: result});
+            res.render("blogs/singleblog", {title: result.title, blog: result});
         })
         .catch(() => {
             console.log("ID wala error")
@@ -40,11 +40,11 @@ const deleteBlog = (req, res) => {
     BlogPost.findByIdAndDelete(req.params.id)
         .then((result) => {
             console.log(`Blog deleted: ${result.title}`);
-            res.redirect("deleteSuccess");
+            res.redirect("/blogs/deleteSuccess")
         })
         .catch((err) => {
             console.log("Blog not deleted");
-            res.render("fail", {title: "All Blogs"});
+            res.render("blogs/fail", {title: "All Blogs"});
         });
 };
 
@@ -67,11 +67,11 @@ const createBlog = (req, res) => {
     BlogPost.create(blog)
         .then((result) => {
             console.log(`New blog added: ${result.title}`);
-            res.redirect("success");
+            res.redirect("blogs/success");
         })
         .catch((err) => {
             console.log("Error creating blog:", err);
-            res.redirect("fail");
+            res.redirect("blogs/fail");
         });
 };
 

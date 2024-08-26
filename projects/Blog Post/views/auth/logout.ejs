@@ -4,7 +4,7 @@
     <%- include('../partials/nav') %>
     <div class="logout-container">
         <h1>Are you sure you want to log out?</h1>
-        <form action="/logout" method="POST">
+        <form action="/auth/logout" method="POST">
             <button type="submit" class="logout-button">Logout</button>
         </form>
         <a href="/blogs" class="cancel-link">Cancel</a>

@@ -1,0 +1,25 @@
+<html lang="en">
+    <%- include("../partials/head.ejs") %>
+    <body>
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="blog-container">
+            <h1>All Blogs</h1>
+            <div class="blog-list">
+                <% if(blogs.length > 0) { %>
+                    <% blogs.forEach(blog => { %>
+                        <a href="/blogs/id/<%= blog.id %>" id="anchor">
+                        <div class="blogs">
+                            <h2><%= blog.title %></h2>
+                            <p>by <b><%= blog.author %></b></p>
+                            <p><%= blog.summary %></p>
+                            <%= blog.content.substring(0,15) %>
+                        </div></a>
+                    <% }) %>
+                <% } %>
+            </div>
+        </div>
+
+        <%- include("../partials/footer.ejs") %>
+    </body>
+</html>

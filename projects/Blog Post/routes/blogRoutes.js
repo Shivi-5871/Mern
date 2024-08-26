@@ -9,16 +9,27 @@ const express = require("express");
 const router = express.Router();
 
 
+
+router.get("/blogs", (req, res) => {
+    const blogs = req.body;
+    res.render("blogs/blogs", {title: "All Blogs"})
+})
+
+
 router.get("/newblog", (req,res) => {
-    res.render("newblog", {title: "NewBlog"});
+    res.render("blogs/newblog", {title: "NewBlog"});
 });
 
 router.get("/success", (req, res) => {
-    res.render("success", {title: "Blogs"});
+    res.render("blogs/success", {title: "Success"});
+});
+
+router.get("/deleteSuccess", (req, res) => {
+    res.render("blogs/deleteSuccess", {title: "Deleted"});
 });
 
 router.get("/fail", (req, res) => {
-    res.render("fail", {title: "Blogs"});
+    res.render("blogs/fail", {title: "Failed"});
 });
 
 
