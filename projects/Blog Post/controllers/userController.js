@@ -3,11 +3,10 @@ const jwt = require("jsonwebtoken");
 
 
 
-function getToken(email, name) {
+function getToken(email, name, id) {
     const secret = "VeryComplexSecret";
-    const token1 = jwt.sign({email}, secret);
-    const token2 = jwt.sign({name}, secret);
-    return token1, token2;
+    const token = jwt.sign({email, name, id}, secret);
+    return token;
 }
 
 
@@ -22,7 +21,7 @@ const signup = (req, res) => {
     User.create({name, email, password})
         .then(user => {
             console.log("User created successfully");
-            const token = getToken(user.email, user.name);
+            const token = getToken(user.email, user.name, user._id);
             res.cookie("authtoken", token);
             res.redirect("/blogs");
         })
@@ -47,7 +46,7 @@ const login = (req, res) => {
             }
             else{
                 console.log("User found");
-                const token = getToken(user.email, user.name);
+                const token = getToken(user.email, user.name, user._id);
                 res.cookie('authtoken', token);
                 res.redirect("/blogs");
             }
